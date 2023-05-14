@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investlux</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dbfake.js"></script>
+</head>
+
+<body class="background-color">  
+
+    <!--header-->
+    <header>
+        <div class="container aba-notificacao">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+                <div class="container-fluid">
+                    <h2 class="cor-letra"> 
+                    Aba de notificações! 
+                    <button type="button" class="btn btn-light" onclick="notificacoes()"><i class="fa-regular fa-bell"></i></button>
+                </h2>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--fim header-->
+
+
+    <!--main-->
+<main>
+    <section>
+
+        <div class="container-fluid">
+            <div class="p-3 mb-2 bg-success text-white espaço rounded-5 fundo-2">
+            <h3>você obteve um retorno de 25% <i class="fa-solid fa-fire"></i></h3>
+            <!--atualização do tempo a cada segundo-->
+            <ul><p>Aatualizado em: <span id="last-updated"></span></p>
+                <ul id="stock-list"></ul>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="col">
+                <div class="p-3 mb-2 bg-secondary text-white  rounded-5 fundo ">
+                <h3><ul>Seus investimentos <i class="fa-solid fa-face-smile"></i></ul></h3>
+               <!--div para retorno investimentos do json-->
+                <h4><div id="lista-investimentos">
+                </div> </h2>
+                <!--fim div retorno investimentos para json-->
+                <ul><button type="button" class="btn btn-dark"onclick="mostrarMensagem()">Ver mais</button></ul>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="p-3 mb-2 bg-secondary text-white  rounded-5 fundo">
+                <h3><ul>Em alta <i class="fa-solid fa-arrow-up"></i></ul></h3>
+                <ul>
+                    <div>
+                   <h4> 
+                    <p style="color:rgb(245, 131, 131)"> GE caiu cerca de $: <span id="GE"></span><br></p>
+                    <p style="color:rgb(60, 241, 130)">Dis subiu cerca de $: <span id="Dis"></span><br> </p>
+                    <p style="color:rgb(60, 241, 130)">NKE subiu cerca de $: <span id="NKE"></span><br> </p>
+                    <p style="color:rgb(245, 131, 131)">BA caiu cerca de $: <span id="BA"></span> </p>
+                    <p style="color:rgb(245, 131, 131)">CE caiu cerca de $: <span id="CE"></span> </p>
+                    </h4>
+                    </div>
+                </ul>
+                <ul><button type="button" class="btn btn-dark" onclick="mostrarMensagem()">Ver mais</button></ul>
+                </div>
+              </div>
+            </div>
+        </div>
+
+    </section>      
+</main>
+<!--fim main-->
+
+<!--footer!-->
+<footer>
+    <div id="footer_content" >
+      <div id="footer_contacts">
+        <h1>Nossas redes sociais</h1>
+
+        <div id="footer_social_media"> 
+          <a href="https://www.instagram.com/jpm0ura/" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="envelope">
+            <i class="fa-solid fa-envelope"></i>
+           </a>
+
+        </div>
+      </div>
+
+  <ul class="footer-list">
+        <li>
+          <h3>links</h3>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Ajuda</a>
+        </li>
+      <li>
+        <a href="#" class="footer-link">calncelar e reembolso</a>
+    </li>
+    <li>
+      <a href="#" class="footer-link">FAQ</a>
+  </li>
+  <li>
+    <a href="#" class="footer-link">Politica de privacidade</a>
+</li>
+  </ul>
+<!--Lista de pagamento-->
+  <ul class="footer-list">
+    <li>
+      <h3> metodos de pagamento</h3>
+      </li>
+      <li>
+        
+        <div id="footer_contacts">
+          <div id="footer_social_media"> 
+            <a href="#" class="footer-link" >
+              <i class="fa-brands fa-cc-mastercard"></i>
+            </a>
+
+            <a href="#" class="footer-link" >
+              <i class="fa-brands fa-cc-visa"></i>
+              </a>
+
+            <a href="#" class="footer-link" >
+              <i class="fa-brands fa-cc-paypal"></i>
+             </a>
+             
+             <li>
+              <div id="footer_contacts">
+                <div id="footer_social_media"> 
+                  <a href="#" class="footer-link" >
+                    <i class="fa-brands fa-cc-amex"></i>
+                  </a>
+      
+                  <a href="#" class="footer-link" >
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                  </a>
+    
+                  <a href="#" class="footer-link" >
+                    <i class="fa-brands fa-cc-amazon-pay"></i>
+                   </a>
+             </li>          
+</li>
+</ul>
+<!--Email para contato-->
+<div id="footer_subscribe">
+  <h3>Contact us</h3>
+
+  <p>
+  coloque seu e-mail para receber notificações sobre seus investimentos.
+  </p>
+
+    <div id="input_group">
+    <input type="email" id="email">
+      <button>
+        <i class="fa-solid fa-envelope"></i>        </button>
+    </div>
+  </div>
+</div>
+
+<div id="footer_copyright">
+  &#169
+  2023 Investlux
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</footer>
+<!--fim footer-->
+
+<!--script para adionar lista de investimentos retornados para o cliente-->
+<script>
+  var invests = '';
+for (i=0; i < db.dados.length; i++) {
+    invests += `${ db.dados[i].titulo } ${ db.dados[i].categoria} ${ db.dados[i].preco} <br>`;
+}
+document.getElementById('lista-investimentos').innerHTML = invests;
+</script>
+
+</body>
+
+<div id="investment-data"></div>
+    <script src="investment_data.js"></script>
+
+<script>
+        function mostrarMensagem() {
+          alert("Mais informações apresentadas!");
+        }
+      </script>
+
+<script>
+    function notificacoes() {
+      alert("Sem novas notificações");
+    }
+  </script>
+
+
+
+
+<script src="app.js"></script>
+</html>
